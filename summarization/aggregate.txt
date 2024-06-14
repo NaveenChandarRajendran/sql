@@ -1,0 +1,15 @@
+Methods are
+
+sum()
+min()
+max()
+avg()
+count()
+
+select 'First Half of 2019'as date_range, sum(invoice_total) as total_sales,sum(payment_total) as total_payments from invoices
+where  invoice_date < '2019-07-01'
+union
+select 'Second Half of 2019'as date_range, sum(invoice_total) as total_sales,sum(payment_total) as total_payments from invoices
+where  invoice_date > '2019-07-01'
+union
+select 'Total of 2019'as date_range, sum(invoice_total) as total_sales,sum(payment_total) as total_payments from invoices;

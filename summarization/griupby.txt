@@ -1,0 +1,8 @@
+select p.date,pm.name as payment_method,sum(p.amount) as total_payments from payments p
+join payment_methods pm on
+pm.payment_method_id = p.payment_method
+group by p.date ,payment_method
+
+Note - The group by list must be mentioned in what are mentioned in select.
+
+ex. in above query we are selecting p.date,pm.name as payment_method and sum(p.amount) so we need to mention the term p.date and payment_method in group by clause. We dont need to add aggregate function terms (sum(p.amount)) so p.amount is not needed.
